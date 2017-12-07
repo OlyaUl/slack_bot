@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^slack_bot/', include('slack_bot_app.urls')),
 
+
 ]

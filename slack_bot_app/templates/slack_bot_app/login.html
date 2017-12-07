@@ -1,0 +1,17 @@
+{% extends 'slack_bot_app/index.html' %}
+{% block title %}Slack bot{% endblock %}
+{% block regist %}
+    <div id="register">
+        <h1>Login</h1>
+
+        <form id="login_form" method="post" action="/slack_bot/login/">
+            {% csrf_token %}
+            username: <input type="text" name="username" value="" size="50"/>
+            <br/>
+            Password: <input type="password" name="password" value="" size="50"/>
+            <br/>
+
+            <input type="submit" value="submit"/>
+        </form>
+    </div>
+{% endblock %}

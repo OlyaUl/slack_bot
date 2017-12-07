@@ -1,0 +1,17 @@
+{% extends 'slack_bot_app/index.html' %}
+{% block title %}Slack bot{% endblock %}
+{% block regist %}
+    {% for m in messages %}
+        <h3>Message</h3>
+        {{ m.team }}
+        {{ m.user_name }}
+        {{ m.workspace }}
+        {{ m.text }}
+        <h2>Threads</h2>
+        {% for t in threads %}
+            {% if t.message == m %}
+                {{ t.text }}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endblock %}

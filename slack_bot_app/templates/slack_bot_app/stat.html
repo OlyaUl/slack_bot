@@ -7,11 +7,11 @@
         {{ m.user_name }}
         {{ m.workspace }}
         {{ m.text }}
-        <h2>Threads</h2>
-        {% for t in threads %}
-            {% if t.message == m %}
-                {{ t.text }}
-            {% endif %}
-        {% endfor %}
+            <h4>    Threads</h4>
+            {% for t in threads %}
+                {% if t.message == m %}
+                    {{ t.text }}
+                {% endif %}
+            {% endfor %}
     {% endfor %}
 {% endblock %}

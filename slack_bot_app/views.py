@@ -18,11 +18,9 @@ from slack_bot_app.models import Team, Message, Thread
 
 from slackclient import SlackClient
 
+
 def index(request):
-    # client_id = settings.SLACK_CLIENT_ID
-    users = User.objects.all()
-    print(users)
-    print(users[1].password)
+
     # Team.objects.create(
     #     name='workbot_test',
     #     team_id= "U8B4AM812",
@@ -87,9 +85,9 @@ def slack_oauth(request):
 
 @login_required
 def statistics(request, slug):
-    messages = Message.objects.filter(workspace=slug)
+    messages = Message.objects.filter(team=slug)
     threads = Thread.objects.all()
-    return render(request, 'slackbot/stat.html', {'messages': messages, 'threads': threads})
+    return render(request, 'slack_bot_app/stat.html', {'messages': messages, 'threads': threads})
 
 
 def send_save_message(request):

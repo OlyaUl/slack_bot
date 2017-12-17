@@ -25,7 +25,7 @@ SECRET_KEY = 'yncli3asu_^qang#$r_m58k+g6#%+ju5v$84u&+%dnq!s4q=v_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['24fd2c08.ngrok.io', '127.0.0.1']
+ALLOWED_HOSTS = ['http://f4ebd03e.ngrok.io', '127.0.0.1']
 
 
 # Application definition
@@ -74,12 +74,25 @@ WSGI_APPLICATION = 'slack_bot_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'slack_test',                      # Or path to database file if using sqlite3.
+        'USER': 'postgres',                      # Not used with sqlite3.
+        'PASSWORD': '1',                  # Not used with sqlite3.
+        'HOST': 'localhost',                   # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+
     }
 }
+
 
 
 # Password validation
@@ -121,21 +134,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 LOGIN_URL = '/slack_bot/'
 LOGIN_REDIRECT_URL = '/slack_bot/'
-# SLACK_CLIENT_ID = "282559645383.281995592243"
-# SLACK_CLIENT_SECRET = "2b1de09566d7f75d5f136b27d01b528d"
-# SLACK_VERIFICATION_TOKEN = "ILSgrn9lnDCCnxer6w1ja0G1"
-# test_bot
-# VERIFICATION = 'xoxb-282760423058-7bNAPDuUpUsqaeXILoFMjwUs'
-# OAUTH = 'xoxp-282559645383-280970212289-282103807136-d052ddbf15b978f72767301fa0bf864c'
-# SLACK_CLIENT_ID = '282559645383.283784960919'
-# SLACK_CLIENT_SECRET = 'df1831c62c0354123c5f993b8fa6e12c'
-# SLACK_VERIFICATION_TOKEN = 'nXvaez0T0b6w5cdahdYKDT4u'
 
-# workbot
-# SLACK_BOT_TOKEN = "xoxb-283146722036-v8pYN2wwFJ005hmqhiQo7SM0"
-# BOT_ID = "U8B4AM812"
-# test work
-SLACK_CLIENT_ID = "282559645383.283555506357"
-SLACK_CLIENT_SECRET =  "297245be757f75f5039b7d69aae36845"
-SLACK_VERIFICATION_TOKEN = "Qa9ArSmt4LpuZI9NurUXOKBs"
-SLACK_BOT_TOKEN = "xoxb-283146722036-v8pYN2wwFJ005hmqhiQo7SM0"
+
+# new
+SLACK_BOT_TOKEN = "xoxb-284823465173-QKs8E9L0PQStyJLc3kTjRxQc"# "xoxb-284823465173-p8VkMbMx9DDQhJ8kOo9Tdzxl"

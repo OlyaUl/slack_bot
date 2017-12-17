@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^register/$', views.Registration.as_view(), name='register'),
     url(r'^login/$', views.Login.as_view(), name='login'),
     url(r'^logout/$', views.user_logout, name='logout'),
-    url(r'^statistics/$', views.statistics, name='statistics'),
+    url(r'^statistics/(?P<slug>[-_\w\d]+)$', views.statistics, name='statistics'),
 
 ]
 

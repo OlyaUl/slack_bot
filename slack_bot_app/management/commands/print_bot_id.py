@@ -3,9 +3,9 @@ from slackclient import SlackClient
 from django.conf import settings
 
 
-BOT_NAME = 'workbot'
-
-slack_client = SlackClient("xoxb-283146722036-v8pYN2wwFJ005hmqhiQo7SM0")
+# BOT_NAME = 'workbot'
+BOT_NAME = 'new'
+slack_client = SlackClient("xoxb-284823465173-QKs8E9L0PQStyJLc3kTjRxQc") #"xoxb-283146722036-v8pYN2wwFJ005hmqhiQo7SM0")
 # SlackClient(os.environ.get('SLACK_BOT_TOKEN')) # SlackClient(settings.SLACK_BOT_TOKEN)
 
 
